@@ -1,0 +1,218 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>IQTableData</title>
+<script type="text/javascript" src="kernel/IQTableData.js"></script>
+<script type="text/javascript" src="basic.js"></script>
+</head>
+<body>
+<input type="button" value="print" onclick="table.printtable(true);" />
+<input type="button" value="primeira tr" onclick="primeirarow()" />
+<input type="button" value="roberto:12345981" onclick="table.findRowIndex('userId',10000000000000)" />
+<input type="button" value="deselect row" onclick="table.deselectRow()" />
+<!--<div id="html"></div>-->
+<!--<textarea id="html" cols="100" rows="20"></textarea>-->
+<script type="text/javascript">
+
+
+
+
+window.offscreenBuffering = true;
+var primeirarow = function()
+{
+	var td = table.content.data.get(1,1);
+	table.mousehandler.content.onRowOver(table.prefix,td.parentNode);
+	table.selectRow(td);
+}
+
+var aparece = function()
+{
+	var obj = document.getElementById('aparece');
+		obj.style.display = 'inline';
+		obj.style.visibility = 'visible';
+	table.update();	
+}
+var acesso = true;
+var selectlastid = 0;
+
+var table = new IQTableData.obj('asd');
+
+	table.host = 'localhost';
+	table.user = 'root';
+	table.pass = '';
+	table.db = 'docmanager';
+
+	table.style.cssText = 'border:1px solid #999999;font-family:Verdana;font-size:10px;';
+	table.cellpadding = 0;
+	table.cellspacing = 0;
+	table.border = 0;
+
+	table.query = "SELECT * FROM dm_permissions";
+	table.limit = 50;
+	table.limitarray = new Array(-1,10,30,50,100);
+	
+	table.breadcrumb = 'advanced';
+	table.controlPanelStyle.fontSize = 13;
+	table.controlPanelAlign = 'right';
+	table.controlPanelVisible = true;
+	table.controlPanelElements.top = true;
+	table.controlPanelElements.bottom = true;
+	
+	
+	table.controlPanelElements.selectLimit.top = false;
+	table.controlPanelElements.selectLimit.left = true;
+	table.controlPanelElements.selectLimit.right = false;
+	table.controlPanelElements.selectLimit.bottom = false;
+	table.controlPanelElements.selectLimit.title = '<span style="font-size:12px;padding:2px;">limite</span>';
+	
+	table.orderBy = new Array('id','ASC');
+	
+	table.header.hightlight = false;
+	table.header.colHightlight = false;
+	table.content.crossHightlight = false;
+	table.content.rowHightlight = true;
+
+
+	table.header.title = new Array('id','item_type','who');
+	table.header.width = new Array(150,150,150);
+	table.header.order = new Array('id','item_type','who');
+	
+	table.header.hover.cssText = 'background-color:#CEE1FF;cursor:pointer;';
+	table.header.column.active.cssText = 'background-color:#000000;color:#ffffff;font-family:Verdana;font-size:10px;vertical-align:middle;';
+	table.header.style = new Array(
+	'text-align:center;font-weight:bold;border-bottom:2px solid #c9c9c9;border-right:1px solid #ffffff;background-color:#66CC00;padding:3px;',
+	'text-align:center;font-weight:bold;border-bottom:2px solid #c9c9c9;border-right:1px solid #ffffff;background-color:#66CC00;',
+	'text-align:center;border-bottom:2px solid #c9c9c9;background-color:#66CC00;'
+	);
+	
+	table.content.hover.cssText = 'background-color:#00CCFF;cursor:pointer;';
+	table.content.active.cssText = 'background-color:#ff0000;vertical-align:middle;';
+	table.content.center.cssText = 'background-color:#ff0000;text-align:center;';
+	table.content.style = new Array(
+	'text-align:center;',
+	'text-align:left;',
+	'text-align:center;'
+	);
+	
+	table.content.format = new Array(
+	'<input type=&quot;checkbox&quot; value=&quot;{id}&quot; />',
+	'{item_type}',
+	'{who}',
+	'<input type="checkbox" value="{userId}" />'
+	);
+	
+	table.content.selectsrow = new Array(
+	true,
+	true,
+	true,
+	false
+	);
+	table.content.repeatRowSelection = false;
+	
+	table.initialize = false;
+	
+	table.create();	
+	table.onRowSelect = function()
+	{		
+		//alert(table.row);
+		//alert(table.content.data);
+		//alert(table.content.data[0][1].innerHTML);
+		selectlastid = table.row[1];
+	}
+	table.onEmptyResults = function()
+	{
+		//alert('pesquisa sem resultados');
+	}
+	table.onReady = function()
+	{
+		//alert('ready');
+	//	if(table.queryrows == 0) alert('!!! BUG BUG BUG BUG !!!'); 
+		//alert('ready');
+	//	var td = table.content.data[1][1];
+	//	table.mousehandler.content.onRowOver(table.prefix,td.parentNode);
+	//	table.selectRow(td);
+//		if(acesso)
+//		{
+//			table.findRowIndex('userId',12345981);
+//			acesso = false;
+//		}
+	}
+	table.onpreviewacess = true;
+	table.onPreview = function()
+	{
+		var key = table.preview['codigo']?table.preview['codigo']:false;
+		alert(key);
+	}
+	table.onCreate = function()
+	{
+		//alert('created');
+	}
+	table.onNewOrder = function()
+	{
+		//alert('order');
+		//table.onNewOrder = function(){};
+		//table.findRowIndex('userId',selectlastid);
+		//alert('funcionalidade ordenaçao activada');
+	}
+	table.onNewPage = function()
+	{
+		//alert('new page');
+	}
+
+var searchtable = function()
+{
+	var normal = document.getElementById('searchstring');
+	var usersgroups = document.getElementById('users_groups');
+	if(!normal || !usersgroups) return false;
+	
+	var childnode = false;
+	var searchstring = "";
+	
+	if(usersgroups.value.length > 0)
+		var query = "select users_users.userId,login,null from users_users inner join users_usergroups on users_usergroups.userId = users_users.userId ";
+			else
+		var query = "select userId,login,null from users_users";
+	if(normal.value.length > 0)
+	{
+		if(childnode)
+			searchstring = " and login like '"+normal.value+"%'";
+		else
+		{
+			childnode = true;
+			searchstring = " where login like '"+normal.value+"%'";
+		}
+	}
+	if(usersgroups.value.length > 0)
+	{
+		if(childnode) searchstring+= " and users_usergroups.groupName like '"+usersgroups.value+"%'";
+		 else searchstring+= " where users_usergroups.groupName like '"+usersgroups.value+"%'";
+	} 
+	if(searchstring.length == 0) searchstring = false;
+	
+	table.querylimitindex = 0;
+	table.pageIndex = 1;
+
+	table.update(query,searchstring);
+	
+}
+var mostratodos = function()
+{
+	//table.querylimitindex = 0;
+	//table.pageIndex = 1;
+	table.update('select email,userId,login,null from users_users',' ');
+	//table.renew();
+}
+</script>
+
+<a href="#" onclick="aparece();">aparece</a>
+<div style="text-align:left">
+	normal: <input id="searchstring" type="text" value="" /><br>
+	com user_groups <input id="users_groups" type="text" value="" /><br>
+	<input type="button" value="search" onclick="searchtable()" /><input type="button" value="mostratodos" onclick="mostratodos();" /><br>
+	<input type="button" value="row" onclick="alert(table.content.data.get(1,1).innerHTML)" />
+	<input type="button" value="update" onclick="table.update();" />
+	<input type="button" value="mudar searchquery" onclick="change();" />
+</div>
+</body>
+</html>

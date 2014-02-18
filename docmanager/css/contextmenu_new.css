@@ -1,0 +1,126 @@
+.properties_title {
+	
+}
+.properties_item {
+	background-color:#f9f9f9;
+	float:left;
+}
+.properties_item a {
+	text-decoration:none;
+	color:#000000;
+}
+.properties_item a:hover {
+	font-weight:bold;
+}
+
+.properties_item div#one {
+	float:left;
+	width:100px;
+	background-color:#f9f9f9;
+	padding:1px;
+	text-align:right;
+}
+.properties_item div#two {
+	float:left;
+	margin-left:2px;
+	background-color:#FFFFFF;
+	border-left:1px solid #CCCCCC;
+	padding:1px;
+	padding-right:4px;
+	width:250px;
+	overflow:hidden;
+}
+
+
+.download {
+	text-align:center;
+	width:240px;
+}
+.download div#one {
+	margin:2px;
+	padding-left:20px;
+	text-align:left;
+}
+.download div#one input {
+	position:absolute;
+	left:190px;
+}
+.download div#two {
+	margin:2px;
+	padding-left:20px;
+	text-align:left;
+}
+.download div#two input {
+	position:absolute;
+	left:190px;
+}
+.download div#three {
+	margin:2px;
+	text-align:center;
+}
+
+
+.contextmenuUL {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	width: 100px; /* Width of Menu Items */
+	/*border-bottom: 1px solid #ccc;*/
+	/*border:1px solid #000000;*/
+	font-size:11px;
+	font-family:"Trebuchet MS";
+}
+
+ul#context {
+	border:1px solid #000000;
+}
+ul#sub {
+	border:1px solid #000000;
+	z-index:100;
+}
+
+.contextmenuUL li {
+	position: relative;
+	border:none;
+}
+	
+.contextmenuLI ul {
+	position: absolute;
+	left: 100px; /* Set 1px less than menu width */
+	top: 0;
+	display: none;
+	border:none;
+}
+
+/* Styles for Menu Items */
+.contextmenuUL li a {
+	
+	display: block;
+	text-decoration: none;
+	color: #000000;
+	background:#ffffff; /* IE6 Bug */
+	padding: 2px;
+	width:96%;
+	
+	/*border: 1px solid #000000;*/
+}
+.contextmenuUL li a:hover {
+	background-color:#CCCCCC;
+	/*color:#4378FF;*/
+}
+
+a#contextA_father {
+	background-image:url(../images/full.gif);
+	background-position:95%;
+	background-repeat:no-repeat;
+}
+
+	
+/* Holly Hack. IE Requirement \*/
+* html .contextmenuUL li { float: left; height: 1%; }
+* html .contextmenuUL li a { height: 1%; }
+/* End */
+
+.contextmenuLI:hover ul, .contextmenuLI.over ul {	
+	display: block; 
+} /* The magic */

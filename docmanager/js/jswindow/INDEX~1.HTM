@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>jswindow</title>
+<script type="text/javascript" src="../basic.js"></script>
+<script language="javascript" src="kernel/jswindow.js"></script>
+
+</head>
+
+<body>
+<script language="javascript">
+
+var obj = new jswindow.obj('asd');
+	obj.toolbar.style.backgroundColor = '#e0e0e0';
+	obj.toolbar.style.cursor = 'pointer';
+	obj.style.fontSize = false;
+	obj.style.fontFamily = false;
+	obj.content.style.fontSize = false;
+	obj.content.style.fontFamily = false;
+	obj.content.style.paddingLeft = false;
+	obj.ControlButtons.ok.enable = false;
+	obj.onCreate = function()
+	{
+		this.innerHTML('<table><tr><td><span>Quantas&nbsp;copias&nbsp;pretende&nbsp;realizar?</span></td><td>&nbsp;&nbsp;&nbsp;<input type="text" id="IQBuilderNumberOfCopys" name="IQBuilderNumberOfCopys" maxlength="3" value="1" style="width:10%" class="cssIQBuilderMessageInput" onkeyup="IQBuilderOnKeyUpVerification(this,window.event)"></td></tr><tr><td colspan="2" align="center"><input type="button" value="Ok" class="cssIQBuilderButton cssIQBuilderButtonMessages" onmousedown="IQBuilderDataCopyOnClick2(document.getElementById(\'IQBuilderNumberOfCopys\').value,true);" ><input type="button" value="Cancelar" class="cssIQBuilderButton cssIQBuilderButtonMessages" onmousedown="IQBuilderCloseWindow();" ></td></tr></table>');
+	}
+	obj.create();
+
+var lt = '<';
+var squantidade=lt+'span>'+lt+'/span>';
+		squantidade += '&nbsp;&nbsp;&nbsp;';
+		squantidade += lt+'input type="text" id="IQBuilderNumberOfCopys" name="IQBuilderNumberOfCopys" maxlength="3" value="1" style="width:10%" class="cssIQBuilderMessageInput" onkeyup="IQBuilderOnKeyUpVerification(this,window.event)">';
+		squantidade += lt+'br>'+lt+'span style="float:left;text-align:center;padding-top:10px;height:25px;">';
+		squantidade += lt+'input type="button" value="" class="cssIQBuilderButton cssIQBuilderButtonMessages" onmousedown="IQBuilderDataCopyOnClick2(document.getElementById(\'IQBuilderNumberOfCopys\').value,true);" >&nbsp;'+lt+'input type="button" value="" class="cssIQBuilderButton cssIQBuilderButtonMessages" onmousedown="IQBuilderCloseWindow();" >'+lt+'/span>';
+
+document.write(squantidade);		
+</script>
+
+
+</body>
+</html>

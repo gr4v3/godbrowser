@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<script type="text/javascript" src="../mootools.js"></script>
+<link rel="stylesheet" type="text/css" href="languages/generic.css">
+</head>
+
+<body onload="alert(1);">
+<script type="text/javascript">
+var language = 'generic';
+var engine = 'older';
+var ua = navigator.userAgent;
+var ts = (new Date).getTime(); // timestamp to avoid cache
+var lh = location.href;
+
+if(ua.match('MSIE')) engine = 'msie';
+else if(ua.match('KHTML')) engine = 'khtml'; 
+else if(ua.match('Opera')) engine = 'opera'; 
+else if(ua.match('Gecko')) engine = 'gecko';
+
+
+new Asset.javascript('engines/'+engine+'.js');
+new Asset.javascript('languages/'+language+'.js');
+
+
+</script>
+<textarea id="asd" class="codepress php">asdasdasd</textarea>
+<script type="text/javascript">
+CodePress.initialize('new');
+</script>
+</body>
+</html>

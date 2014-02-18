@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<script type="text/javascript" src="mootools.js"></script>
+<script type="text/javascript" src="kernel/IQTableData.js"></script>
+</head>
+
+<body>
+<SCRIPT type="text/javascript">  							
+var table = new IQTableData.obj('jstable');
+
+	table.host = 'localhost';
+	table.user = 'root';
+	table.pass = '';
+	table.db = 'docmanager';
+
+	table.style.cssText = 'border:1px solid #999999;font-family:Verdana;font-size:10px;';
+	table.cellpadding = 0;
+	table.cellspacing = 0;
+	table.border = 0;
+
+	table.query = "SELECT * FROM dm_permissions";
+	table.limit = 50;
+	table.limitarray = new Array(-1,10,30,50,100);
+	
+	table.breadcrumb = 'advanced';
+	table.controlPanelStyle.fontSize = 13;
+	table.controlPanelAlign = 'right';
+	table.controlPanelVisible = true;
+	table.controlPanelElements.top = true;
+	table.controlPanelElements.bottom = true;
+	
+	
+	table.controlPanelElements.selectLimit.top = false;
+	table.controlPanelElements.selectLimit.left = true;
+	table.controlPanelElements.selectLimit.right = false;
+	table.controlPanelElements.selectLimit.bottom = false;
+	table.controlPanelElements.selectLimit.title = '<span style="font-size:12px;padding:2px;">limite</span>';
+	
+	table.orderBy = new Array('id','ASC');
+	
+	table.header.hightlight = false;
+	table.header.colHightlight = false;
+	table.content.crossHightlight = false;
+	table.content.rowHightlight = true;
+
+
+	table.header.title = new Array('id','item_type','who');
+	table.header.width = new Array(150,150,150);
+	table.header.order = new Array('id','item_type','who');
+	
+	table.header.hover.cssText = 'background-color:#CEE1FF;cursor:pointer;';
+	table.header.column.active.cssText = 'background-color:#000000;color:#ffffff;font-family:Verdana;font-size:10px;vertical-align:middle;';
+	table.header.style = new Array(
+	'text-align:center;font-weight:bold;border-bottom:2px solid #c9c9c9;border-right:1px solid #ffffff;background-color:#66CC00;padding:3px;',
+	'text-align:center;font-weight:bold;border-bottom:2px solid #c9c9c9;border-right:1px solid #ffffff;background-color:#66CC00;',
+	'text-align:center;border-bottom:2px solid #c9c9c9;background-color:#66CC00;'
+	);
+	
+	table.content.hover.cssText = 'background-color:#00CCFF;cursor:pointer;';
+	table.content.active.cssText = 'background-color:#ff0000;vertical-align:middle;';
+	table.content.center.cssText = 'background-color:#ff0000;text-align:center;';
+	table.content.style = new Array(
+	'text-align:center;',
+	'text-align:left;',
+	'text-align:center;'
+	);
+	
+	table.content.format = new Array(
+	'<input type=&quot;checkbox&quot; value=&quot;{id}&quot; />',
+	'{item_type}',
+	'{who}',
+	'<input type="checkbox" value="{userId}" />'
+	);
+	
+	table.content.selectsrow = new Array(
+	true,
+	true,
+	true,
+	false
+	);
+	table.content.repeatRowSelection = false;
+	
+	table.initialize = false;
+	
+	table.create();	
+
+	
+</SCRIPT>
+<a href="#" onclick="table.update();">asdasd</a>
+</body>
+</html>

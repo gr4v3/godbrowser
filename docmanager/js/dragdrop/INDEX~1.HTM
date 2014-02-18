@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<SCRIPT>
+var oNewOption = false;		    
+
+// Code for dynamically adding options to a select.
+
+function ShowResults()
+{				// Information about the events 
+				 // and what object fired them.
+	if(!oNewOption)oNewOption = document.getElementById('move');
+	oNewOption.style.left = event.x - 5;
+	oNewOption.style.top = event.y - 5;
+	oNewOption.style.cursor = 'pointer';
+}
+</SCRIPT>
+</HEAD>
+<BODY>
+<div id="move" onmouseover="this.firstChild.select();" ondragend="this.firstChild.blur();" ondrag="ShowResults();" style="position:absolute;width:50px;height:50px;"><input type="button" value="&nbsp;" style="background-image:url(transparent.gif);border:0px;width:50px;font-size:50px;background-color:#000000;"  /></div>
+<P>Source events are wired up to this text box.</P>
+<INPUT ID=txtDragOrigin VALUE="Text to Drag"
+    ondragstart="ShowResults()"
+    ondrag="ShowResults()"
+    ondragend="ShowResults()"
+>
+<P>Target events are bound to this text box.</P>
+<INPUT ID=txtDragDestination VALUE="Drag Destination"
+    ondragenter="ShowResults()"
+    ondragover="ShowResults()"
+    ondragleave="ShowResults()"
+    ondrop="ShowResults()"
+>
+<SELECT ID=oResults SIZE=30>
+  <OPTION>List of Events Fired
+</SELECT>
+</BODY>
+</html>

@@ -1,0 +1,257 @@
+/* CSS Document */
+
+#contextmenu {
+	width:106px;
+	_width:115px;
+	*width:115px;
+	border:1px solid #CCCCCC;
+	overflow:hidden;
+}
+#contextmenu_new {
+	width:106px;
+	_width:115px;
+	*width:115px;
+	border:1px solid #CCCCCC;
+	
+}
+#contextmenu_view {
+	width:106px;
+	_width:115px;
+	*width:115px;
+	border:1px solid #CCCCCC;
+	
+}
+#contextmenu_edit {
+	width:106px;
+	_width:115px;
+	*width:115px;
+	border:1px solid #CCCCCC;
+	
+}
+#contextmenu_property {
+	width:300px;
+	border:1px solid #CCCCCC;
+	overflow:hidden;
+}
+
+.menu_item {background-color:#FFFFFF;}
+.menu_item div#one {
+	float:left;
+	width:20px;
+	border-right:1px solid #CCCCCC;
+	background-color:#f9f9f9;
+	
+}
+.menu_item div#two {
+	float:left;
+	padding-left:2px;
+	width:68px;
+	color:#CCCCCC;
+	background-color:#FFFFFF;
+}
+
+.menu_item div#two a {
+	color:#000000;
+	text-decoration:none;
+}
+.menu_item div#two a:hover div {
+	text-decoration:none;
+	color:#0099CC;
+	background-color:#F7F7F7;
+	width:10px;
+}
+.menu_item div#two_empty {
+	float:left;
+	padding-left:2px;
+	width:82px;
+	color:#CCCCCC;
+	background-color:#FFFFFF;
+}
+.menu_item div#two_empty a {
+	color:#000000;
+	text-decoration:none;
+}
+.menu_item div#two_empty a:hover div {
+	text-decoration:none;
+	color:#0099CC;
+	background-color:#F7F7F7;
+}
+.menu_item div#three {
+	float:left;
+	width:10px;
+	background-color:#FFFFFF;
+	overflow:hidden;
+}
+.menu_item div#empty {
+	float:left;
+	width:0px;
+	overflow:hidden;
+}
+
+.properties_title {
+	
+}
+.properties_item {
+	background-color:#f9f9f9;
+	float:left;
+}
+.properties_item div#one {
+	float:left;
+	width:100px;
+	background-color:#f9f9f9;
+	padding:1px;
+}
+.properties_item div#two {
+	float:left;
+	margin-left:2px;
+	background-color:#FFFFFF;
+	border-left:1px solid #CCCCCC;
+	padding:1px;
+	width:250px;
+	overflow:hidden;
+}
+
+
+
+
+
+.rename {
+	width:200px;
+	text-align:center;
+}
+.rename div#one {
+	margin:2px;
+	text-align:center;
+}
+.rename div#two {
+	margin:2px;
+	text-align:center;
+}
+
+.download {
+	text-align:center;
+}
+.download div#one {
+	margin:2px;
+	padding-left:20px;
+	text-align:left;
+}
+.download div#one input {
+	position:absolute;
+	left:190px;
+}
+.download div#two {
+	margin:2px;
+	padding-left:20px;
+	text-align:left;
+}
+.download div#two input {
+	position:absolute;
+	left:190px;
+}
+.download div#three {
+	margin:2px;
+	text-align:center;
+}
+
+
+
+
+
+
+
+.error {
+	text-align:center;
+	margin:0px;
+	padding:4px;
+	width:250px;
+}
+
+.error_title {
+	font-weight:bold;
+	font-size:12px;
+	padding-left:4px;
+	color:#FFFFFF;
+}
+
+
+.content {
+	width:250px;
+}
+
+.upload_content {
+	width:400px;
+	height:100px;
+	padding:2px;
+	margin:0px;
+}
+.tags_content {
+	margin:0px;	
+}
+.tags_content div {
+	padding:5px;
+}
+.tags_content div input {
+	width:237px;
+}
+.tags_row div {
+	padding:2px;
+}
+
+
+
+.search_types {
+	width:200px;
+	padding:2px;
+	float:right;
+}
+.search_types div {
+	width:100%;
+}
+.search_keywords {
+	float:left;
+	width:290px;
+	margin-top:3px;
+}
+.search_keywords div#title {
+	font-weight:bold;
+}
+.search_types div#title {
+	font-weight:bold;
+}
+.search_main {
+	width:500px;
+	padding:2px;
+}
+.search_main div#searchFileresult {
+	width:500px;
+	float:left;
+	margin-top:2px;
+	border-top:1px solid #cccccc;
+	text-align:left;
+	margin-right:2px;
+	padding:5px;
+	overflow:auto;
+}
+
+
+
+.one_over {
+	color:#000000;
+	cursor:pointer;
+	background-color:#F3F3F3;
+}
+.one_subover {
+	background-color:#CCCCCC;
+	cursor:pointer;
+}
+
+span#drag_tracker {
+	border:1px solid #cccccc;
+	padding:2px;
+	position:absolute;
+	background-color:#FFFFFF;
+}
+
+
+
