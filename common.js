@@ -328,9 +328,9 @@ var common = {
 
 					this.afterEvent = function(){};
 
-					//parent.upload.create();
+					parent.upload.create();
 
-					//parent.uploadOverwrite.create();
+					parent.uploadOverwrite.create();
 
 				}
 
